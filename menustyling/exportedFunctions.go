@@ -37,7 +37,7 @@ func DisplayStoredMenu(indentifier string) *Menu {
 
 // DisplayMenu displays the menu.
 func (menu *Menu) DisplayMenu() {
-
+	menu.drawField()
 	stringArray := make([]string, menu.Height)
 
 	for i := 0; i < len(menu.MenuArray); i++ {

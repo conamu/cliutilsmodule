@@ -29,6 +29,8 @@ func (menu *Menu) getHeight() {
 }
 
 func (menu *Menu) drawField() {
+	menu.getHeight()
+	menu.drawLine()
 	for i := 0; i < menu.Height; i++ {
 		menu.MenuArray[i] = menu.Line
 	}
