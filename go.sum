@@ -1,0 +1,4 @@
+github.com/conamu/cliutilsmodule/menustyling v0.0.0-20201001084057-ab2e64b986c9 h1:UZxtR7dXaUZEmS4nMksdKUOfJLJDQwkPMb8Y7+yb+l0=
+github.com/conamu/cliutilsmodule/menustyling v0.0.0-20201001084057-ab2e64b986c9/go.mod h1:NgDMpljOrJSy9lFeP8oPgrdKsWoWQfm5sDkYLxxSfIk=
+github.com/conamu/cliutilsmodule/utils v0.0.0-20201001084057-ab2e64b986c9 h1:t7tmCWskP9GEMPU/1wEEzzaLvzZ/34MXwTy53rDgr0w=
+github.com/conamu/cliutilsmodule/utils v0.0.0-20201001084057-ab2e64b986c9/go.mod h1:04oMQUpSnFNBwgwUwg7JeMnkIBDlfJhuew6Yxx+b1xs=
