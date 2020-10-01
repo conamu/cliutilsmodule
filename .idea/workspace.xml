@@ -1,13 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b0a069f4-ab3b-4927-87c0-8e0799e5fd04" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/cliutilsmodule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cliutilsmodule.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menustyling/coreFunctions.go" beforeDir="false" afterPath="$PROJECT_DIR$/menustyling/coreFunctions.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menustyling/exportedFunctions.go" beforeDir="false" afterPath="$PROJECT_DIR$/menustyling/exportedFunctions.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/menustyling/menuObject.go" beforeDir="false" afterPath="$PROJECT_DIR$/menustyling/menuObject.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.go" beforeDir="false" afterPath="$PROJECT_DIR$/test.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.go" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,6 +56,7 @@
     <property name="DefaultGoTemplateProperty" value="Go File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
     <property name="go.import.settings.migrated" value="true" />
     <property name="go.sdk.automatically.set" value="true" />
     <property name="go.tried.to.enable.integration.vgo.integrator" value="true" />
@@ -52,17 +69,33 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/testing" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VgoProject">
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="263" y="275" width="432" height="486" key="FileChooserDialogImpl" timestamp="1601540124541">
+    <state x="263" y="275" width="432" height="486" key="FileChooserDialogImpl" timestamp="1601545042408">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state x="263" y="275" width="432" height="486" key="FileChooserDialogImpl/0.0.1920.1035@0.0.1920.1035" timestamp="1601540124541" />
+    <state x="263" y="275" width="432" height="486" key="FileChooserDialogImpl/0.0.1920.1035@0.0.1920.1035" timestamp="1601545042408" />
   </component>
 </project>
