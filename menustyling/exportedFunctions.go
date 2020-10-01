@@ -5,8 +5,8 @@ import (
 	"strings"
 )
 
-// menuDataStore is a Map which stores multiple menus to use later
-var menuDataStore menuStore
+// menuDataStore is a Map which stores a max of 20 menus to use later
+var menuDataStore = make(menuStore, 20)
 
 // CreateMenu Creates and Initialises a new Menu fo you to Customize.
 func CreateMenu() *Menu {
@@ -30,8 +30,8 @@ func (menu *Menu) StoreMenu(identifier string) {
 	menuDataStore[identifier] = menu
 }
 
-// DisplayStoredMenu displays a Menu form the menuStore base on the identifier
-func DisplayStoredMenu(identifier string) *Menu {
+// GetStoredMenu displays a Menu form the menuStore base on the identifier
+func GetStoredMenu(identifier string) *Menu {
 	return menuDataStore[identifier]
 }
 

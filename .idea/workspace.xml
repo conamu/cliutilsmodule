@@ -22,8 +22,8 @@
     <list default="true" id="b0a069f4-ab3b-4927-87c0-8e0799e5fd04" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/cliutilsmodule.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/cliutilsmodule.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.go" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/menustyling/coreFunctions.go" beforeDir="false" afterPath="$PROJECT_DIR$/menustyling/coreFunctions.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/menustyling/exportedFunctions.go" beforeDir="false" afterPath="$PROJECT_DIR$/menustyling/exportedFunctions.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,9 +93,13 @@
     <integration-enabled>true</integration-enabled>
   </component>
   <component name="WindowStateProjectService">
-    <state x="263" y="275" width="432" height="486" key="FileChooserDialogImpl" timestamp="1601545042408">
+    <state x="263" y="275" width="432" height="486" key="FileChooserDialogImpl" timestamp="1601546610320">
       <screen x="0" y="0" width="1920" height="1035" />
     </state>
-    <state x="263" y="275" width="432" height="486" key="FileChooserDialogImpl/0.0.1920.1035@0.0.1920.1035" timestamp="1601545042408" />
+    <state x="263" y="275" width="432" height="486" key="FileChooserDialogImpl/0.0.1920.1035@0.0.1920.1035" timestamp="1601546610320" />
+    <state x="143" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1601547606754">
+      <screen x="0" y="0" width="1920" height="1035" />
+    </state>
+    <state x="143" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1035@0.0.1920.1035" timestamp="1601547606754" />
   </component>
 </project>
