@@ -4,6 +4,7 @@ package menustyling
 type Menu struct {
 	// Exported Fields the user has to set to generate a menu.
 	MenuText       [][]string
+	WhiteSpace     int
 	StyleChar      string
 	LineThickness  int
 	SeparatorLines bool
