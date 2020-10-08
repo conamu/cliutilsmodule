@@ -17,7 +17,7 @@ func CreateMenu() *Menu {
 	pMenu.width = 0
 	pMenu.SeparatorLines = false
 	pMenu.StyleChar = ""
-	pMenu.line = nil
+	pMenu.stringArray = nil
 	pMenu.MenuText = nil
 	pMenu.menuArray = nil
 	pMenu.menu = ""
@@ -38,13 +38,11 @@ func GetStoredMenu(identifier string) *Menu {
 // DisplayMenu displays the menu.
 func (menu *Menu) DisplayMenu() {
 	menu.drawField()
-	stringArray := make([]string, menu.height)
-
+	menu.putText()
+	menu.stringArray = make([]string, menu.height)
 	for i := 0; i < len(menu.menuArray); i++ {
-		stringArray[i] = strings.Join(menu.menuArray[i], "")
+		menu.stringArray[i] = strings.Join(menu.menuArray[i], "")
 	}
-
-	menu.menu = strings.Join(stringArray, "\n")
-
-	fmt.Println(menu.menu)
+	menu.menu = strings.Join(menu.stringArray, "\n")
+	fmt.Print(menu.menu)
 }

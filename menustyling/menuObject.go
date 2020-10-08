@@ -9,7 +9,7 @@ type Menu struct {
 	SeparatorLines bool
 	// In code used fields to store data.
 	menuArray      [][]string
-	line           []string
+	stringArray	   []string
 	menu           string
 	height         int
 	width          int

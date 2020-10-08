@@ -1,45 +1,44 @@
 package menustyling
 
-import "fmt"
+// drawField generates decoration lines for the menu.
+// It will generate a line based on the longest string and lineThickness
+// Then it will fill out a 2 dimensional field with those characters.
+func (menu *Menu) drawField() {
+	menu.getWidth()
+	menu.getHeight()
+	menu.menuArray = make([][]string, menu.height)
 
-//TODO: Fix Line Rendering, string length is not beeing calculated correctly.
-func (menu *Menu) drawLine() {
+	for indexOfMenuLine := 0; indexOfMenuLine < menu.height; indexOfMenuLine++ {
+		menu.menuArray[indexOfMenuLine] = make([]string, menu.width)
+		for indexOfMenuChar := 0; indexOfMenuChar < menu.width; indexOfMenuChar++ {
+			menu.menuArray[indexOfMenuLine][indexOfMenuChar] = menu.StyleChar
+		}
+	}
+}
+
+func (menu *Menu) getWidth() {
 	for _, internalStringArray := range menu.MenuText {
 		for _, internalString := range internalStringArray {
-			fmt.Println("DEBUG:", len(internalString))
-			fmt.Println("DEBUG:", len(internalStringArray))
 			if len(internalString) >= menu.width {
-				fmt.Println("DEBUG: Successfully updated Width:", menu.width)
-				menu.width = len(internalString)
+				menu.width = len(internalString) + (menu.LineThickness * 2)
 			}
 		}
 	}
-
-	menu.line = make([]string, menu.width + (menu.LineThickness* 2))
-	for i := 0; i < menu.width; i++ {
-		menu.line[i] = menu.StyleChar
-	}
 }
 
+// getHeight calculates the height of the menu with the amount of lines in the menuText Array
 func (menu *Menu) getHeight() {
-	length := 0
-	sepLen := 0
-	for _, v := range menu.MenuText {
-		length += len(v)
+	height := 0
+	sepHeight := 0
+	for _, stringArray := range menu.MenuText {
+		height += len(stringArray)
 	}
-
-	if menu.SeparatorLines == true {
-		sepLen = len(menu.MenuText) - 1
+	if menu.SeparatorLines {
+		sepHeight = len(menu.MenuText) - 1
 	}
-
-	menu.height = (length + (menu.LineThickness * 2)) + sepLen
+	menu.height = (height + (menu.LineThickness * 2)) + sepHeight
 }
 
-func (menu *Menu) drawField() {
-	menu.getHeight()
-	menu.drawLine()
-	menu.menuArray = make([][]string, menu.height)
-	for i := 0; i < menu.height; i++ {
-		menu.menuArray[i] = menu.line
-	}
+func (menu *Menu) putText() {
+	
 }
