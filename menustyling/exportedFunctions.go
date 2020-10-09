@@ -52,3 +52,7 @@ func (menu *Menu) DisplayMenu() {
 		utils.GetIO()
 	}
 }
+
+func (menu *Menu) GetInputData() string {
+	return menu.inputData
+}
