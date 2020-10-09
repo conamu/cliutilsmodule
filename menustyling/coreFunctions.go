@@ -53,7 +53,7 @@ func (menu *Menu) putText() {
 			menu.menuArray[indexOfMenuLine][indexOfMenuChar] = string(menu.menuText[indexOfTextBlock][indexOfTextLine][indexOfTextChar])
 			indexOfTextChar++
 		}
-		
+
 		if menu.whiteSpace != 0 {
 			for indexOfWhiteSpace := menu.lineThickness*2 + menu.whiteSpace - 1; indexOfWhiteSpace > menu.lineThickness*2 - 1; indexOfWhiteSpace-- {
 				menu.menuArray[indexOfMenuLine][indexOfWhiteSpace] = " "
