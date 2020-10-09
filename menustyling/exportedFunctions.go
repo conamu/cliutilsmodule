@@ -49,7 +49,7 @@ func (menu *Menu) DisplayMenu() {
 	menu.menu = strings.Join(menu.stringArray, "\n")
 	fmt.Println(menu.menu)
 	if menu.takeInput {
-		utils.GetIO()
+		menu.inputData = utils.GetIO()
 	}
 }
 
