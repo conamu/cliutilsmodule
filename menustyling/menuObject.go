@@ -8,6 +8,8 @@ type Menu struct {
 	StyleChar      string
 	LineThickness  int
 	SeparatorLines bool
+	TakeInput      bool
+	InputData      string
 	// In code used fields to store data.
 	menuArray      [][]string
 	stringArray	   []string

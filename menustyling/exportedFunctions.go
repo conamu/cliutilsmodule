@@ -1,7 +1,9 @@
 package menustyling
 
 import (
+	"bufio"
 	"fmt"
+	"os"
 	"strings"
 )
 
@@ -45,4 +47,10 @@ func (menu *Menu) DisplayMenu() {
 	}
 	menu.menu = strings.Join(menu.stringArray, "\n")
 	fmt.Print(menu.menu)
+	if menu.TakeInput {
+		fmt.Println("\n")
+		scanner := bufio.NewScanner(os.Stdin)
+		scanner.Scan()
+		menu.InputData = scanner.Text()
+	}
 }

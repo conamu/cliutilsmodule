@@ -16,14 +16,11 @@ func (menu *Menu) drawField() {
 	}
 }
 
-//TODO: fix white space calculation and build feature that adds separator lines to the menu if wished.
-
-
 func (menu *Menu) getWidth() {
 	for _, internalStringArray := range menu.MenuText {
 		for _, internalString := range internalStringArray {
-			if len(internalString) >= menu.width {
-				menu.width = len(internalString) + (menu.LineThickness * 2) + menu.WhiteSpace*2
+			if len(internalString) > menu.width - (menu.LineThickness * 4) - menu.WhiteSpace*2 {
+				menu.width = len(internalString) + (menu.LineThickness * 4) + menu.WhiteSpace*2
 			}
 		}
 	}
@@ -47,24 +44,39 @@ func (menu *Menu) putText() {
 	indexOfTextLine := 0
 	indexOfTextChar := 0
 	indexOfTextBlock := 0
+	indexModForSeparator := 0
+	indexOfSeparatorLine := 0
 
 	for indexOfMenuLine := menu.LineThickness; indexOfMenuLine < menu.height - menu.LineThickness; indexOfMenuLine++ {
 		indexOfTextChar = 0
-		for indexOfMenuChar := menu.LineThickness + menu.WhiteSpace; indexOfMenuChar < len(menu.MenuText[indexOfTextBlock][indexOfTextLine]) + menu.LineThickness + menu.WhiteSpace; indexOfMenuChar++ {
+		for indexOfMenuChar := menu.LineThickness*2 + menu.WhiteSpace; indexOfMenuChar < len(menu.MenuText[indexOfTextBlock][indexOfTextLine]) + menu.LineThickness*2 + menu.WhiteSpace; indexOfMenuChar++ {
 			menu.menuArray[indexOfMenuLine][indexOfMenuChar] = string(menu.MenuText[indexOfTextBlock][indexOfTextLine][indexOfTextChar])
 			indexOfTextChar++
 		}
 
+
 		if menu.WhiteSpace != 0 {
-			menu.menuArray[indexOfMenuLine][menu.LineThickness + menu.WhiteSpace - 1] = " "
-			menu.menuArray[indexOfMenuLine][len(menu.MenuText[indexOfTextBlock][indexOfTextLine]) + menu.LineThickness + menu.WhiteSpace] = " "
+			for indexOfWhiteSpace := menu.LineThickness*2 + menu.WhiteSpace - 1; indexOfWhiteSpace > menu.LineThickness*2 - 1; indexOfWhiteSpace-- {
+				menu.menuArray[indexOfMenuLine][indexOfWhiteSpace] = " "
+			}
+			for indexOfWhiteSpace := menu.LineThickness*2 + menu.WhiteSpace + len(menu.MenuText[indexOfTextBlock][indexOfTextLine]); indexOfWhiteSpace < menu.width - menu.LineThickness*2; indexOfWhiteSpace++ {
+				menu.menuArray[indexOfMenuLine][indexOfWhiteSpace] = " "
+			}
 		}
 
+
+		indexOfSeparatorLine++
+		if menu.SeparatorLines && indexModForSeparator != len(menu.MenuText) - 1 && indexOfSeparatorLine == len(menu.MenuText[indexOfTextBlock]) {
+			indexOfMenuLine++
+			indexModForSeparator++
+			indexOfSeparatorLine = 0
+		}
 
 		indexOfTextLine++
 		if indexOfTextLine == len(menu.MenuText[indexOfTextBlock]) {
 			indexOfTextLine = 0
 		}
+
 		indexOfTextBlock++
 		if indexOfTextBlock == len(menu.MenuText) {
 			indexOfTextBlock = 0
