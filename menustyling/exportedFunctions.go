@@ -1,9 +1,8 @@
 package menustyling
 
 import (
-	"bufio"
 	"fmt"
-	"os"
+	"github.com/conamu/cliutilsmodule/utils"
 	"strings"
 )
 
@@ -11,18 +10,20 @@ import (
 var menuDataStore = make(menuStore, 20)
 
 // CreateMenu Creates and Initialises a new Menu fo you to Customize.
-func CreateMenu() *Menu {
+func CreateMenu(menuText [][]string, styleChar string, lineThickness int, whiteSpace int, separatorLines bool, takeInput bool) *Menu {
 	var menu Menu
 	var pMenu = &menu
 	pMenu.height = 0
-	pMenu.LineThickness = 0
 	pMenu.width = 0
-	pMenu.SeparatorLines = false
-	pMenu.StyleChar = ""
 	pMenu.stringArray = nil
-	pMenu.MenuText = nil
 	pMenu.menuArray = nil
 	pMenu.menu = ""
+	pMenu.lineThickness = lineThickness
+	pMenu.separatorLines = separatorLines
+	pMenu.styleChar = styleChar
+	pMenu.menuText = menuText
+	pMenu.whiteSpace = whiteSpace
+	pMenu.takeInput = takeInput
 
 	return pMenu
 }
@@ -46,11 +47,8 @@ func (menu *Menu) DisplayMenu() {
 		menu.stringArray[i] = strings.Join(menu.menuArray[i], "")
 	}
 	menu.menu = strings.Join(menu.stringArray, "\n")
-	fmt.Print(menu.menu)
-	if menu.TakeInput {
-		fmt.Println("\n")
-		scanner := bufio.NewScanner(os.Stdin)
-		scanner.Scan()
-		menu.InputData = scanner.Text()
+	fmt.Println(menu.menu)
+	if menu.takeInput {
+		utils.GetIO()
 	}
 }

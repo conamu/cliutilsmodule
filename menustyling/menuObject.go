@@ -2,20 +2,18 @@ package menustyling
 
 // Menu is a type struct that holds data to build a menu.
 type Menu struct {
-	// Exported Fields the user has to set to generate a menu.
-	MenuText       [][]string
-	WhiteSpace     int
-	StyleChar      string
-	LineThickness  int
-	SeparatorLines bool
-	TakeInput      bool
-	InputData      string
-	// In code used fields to store data.
+	menuText       [][]string
 	menuArray      [][]string
-	stringArray	   []string
+	stringArray    []string
+	styleChar      string
+	inputData      string
 	menu           string
+	whiteSpace     int
+	lineThickness  int
 	height         int
 	width          int
+	separatorLines bool
+	takeInput      bool
 }
 
 // menuStore gets used to store multiple Menus with string identifiers
