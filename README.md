@@ -20,22 +20,22 @@ menuText[1] = []string{"1) Yes", "2) No"}`
 4. bool: do you want separation lines between your text blocks?
 5. bool: do you want to take input after displaying the menu?
 
-#### Example: `CreateMenu(menuText, 2, 5, true, true)`
+#### Example: `CreateMenu(menuText, "=", 2, 5, true, true)`
 
 #### After this you can:
 1. Display your menu  
-`CreateMenu(menuText, 2, 5, true, true).DisplayMenu()`
+`CreateMenu(menuText, "=", 2, 5, true, true).DisplayMenu()`
 2. store it in a variable with type Menu  
-`main := CreateMenu(menuText, 2, 5, true, true)`
+`main := CreateMenu(menuText, "=", 2, 5, true, true)`
 3. store it inside the Menustore with a string ID  
-`CreateMenu(menuText, 2, 5, true, true).StoreMenu("main")`
+`CreateMenu(menuText, "=", 2, 5, true, true).StoreMenu("main")`
 
 #### You can also get a stored menu and display it from the storage directly
 `GetStoredMenu("main").DisplayMenu()`
 
 #### If you got input from a Menu, its stored inside the Menu object. You can access it like that:
 `GetStoredMenu("main").GetInputData()`
-this will return a string for you to use.
+this will return a **string** for you to use.
 
 ### Upcoming features:
 1. modifiy a portion of the menutext to simplify templating
