@@ -46,6 +46,9 @@ this will return a **string** for you to use.
 6. Option to have a sliding text if text is too big
 7. option to have a max menu size.
 
+### Known Issues:
+1. Module throws an index out of Range error when Seperator lines are set to false.
+
 ## Utility Functions:
 
 ### `GetIO()`
