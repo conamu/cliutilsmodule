@@ -76,7 +76,7 @@ func (menu *Menu) putText() {
 			}
 		}
 
-		// At the end of the loop, add 1 to the textline index and separator line index.
+		// At the end of the loop, add 1 to the text line index and separator line index.
 		indexOfSeparatorLine++
 		indexOfTextLine++
 		// if the separator line option is true, hop over one text line to leave a blank separator line.
@@ -86,8 +86,9 @@ func (menu *Menu) putText() {
 			indexOfSeparatorLine = 0
 			indexOfTextBlock++
 			indexOfTextLine = 0
-		} else if !menu.separatorLines {
+		} else if !menu.separatorLines && indexModForSeparator != len(menu.menuText) - 1 && indexOfSeparatorLine == len(menu.menuText[indexOfTextBlock]) {
 			indexOfSeparatorLine = 0
+			indexOfTextBlock++
 			indexOfTextLine = 0
 		}
 	}
