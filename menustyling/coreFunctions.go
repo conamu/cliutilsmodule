@@ -86,6 +86,8 @@ func (menu *Menu) putText() {
 			indexOfSeparatorLine = 0
 			indexOfTextBlock++
 			indexOfTextLine = 0
+
+		// If the option isnt active, reset values for next block
 		} else if !menu.separatorLines && indexModForSeparator != len(menu.menuText) - 1 && indexOfSeparatorLine == len(menu.menuText[indexOfTextBlock]) {
 			indexOfSeparatorLine = 0
 			indexOfTextBlock++
