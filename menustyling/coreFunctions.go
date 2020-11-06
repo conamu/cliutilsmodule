@@ -3,9 +3,9 @@ package menustyling
 // drawField generates decoration lines for the menu.
 // It will generate a line based on the longest string and lineThickness
 // Then it will fill out a 2 dimensional field with those characters.
-func (menu *Menu) drawField() {
-	menu.getWidth()
-	menu.getHeight()
+func (menu *Menu) drawField(rType string) {
+	menu.getWidth(rType)
+	menu.getHeight(rType)
 	menu.menuArray = make([][]string, menu.height)
 
 	for indexOfMenuLine := 0; indexOfMenuLine < menu.height; indexOfMenuLine++ {
@@ -16,7 +16,7 @@ func (menu *Menu) drawField() {
 	}
 }
 
-func (menu *Menu) getWidth() {
+func (menu *Menu) getWidth(rType string) {
 	for _, internalStringArray := range menu.menuText {
 		for _, internalString := range internalStringArray {
 			if len(internalString) > menu.width - (menu.lineThickness* 4) - menu.whiteSpace*2 {
@@ -27,7 +27,7 @@ func (menu *Menu) getWidth() {
 }
 
 // getHeight calculates the height of the menu with the amount of lines in the menuText Array
-func (menu *Menu) getHeight() {
+func (menu *Menu) getHeight(rType string) {
 	height := 0
 	sepHeight := 0
 	for _, stringArray := range menu.menuText {
@@ -43,7 +43,7 @@ func (menu *Menu) getHeight() {
 func (menu *Menu) putText() {
 
 	// Set some local variables to keep track of important positions and configurations.
-	// Keep track of the current Textblock index
+	// Keep track of the current Text block index
 	indexOfTextBlock := 0
 	// Keep track of the current Text Line of the current text block.
 	indexOfTextLine := 0
@@ -87,7 +87,7 @@ func (menu *Menu) putText() {
 			indexOfTextBlock++
 			indexOfTextLine = 0
 
-		// If the option isnt active, reset values for next block
+		// If the option isn't active, reset values for next block
 		} else if !menu.separatorLines && indexModForSeparator != len(menu.menuText) - 1 && indexOfSeparatorLine == len(menu.menuText[indexOfTextBlock]) {
 			indexOfSeparatorLine = 0
 			indexOfTextBlock++

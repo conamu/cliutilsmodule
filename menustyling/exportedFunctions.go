@@ -8,11 +8,13 @@ import (
 
 // menuDataStore is a Map which stores a max of 20 menus to use later
 var menuDataStore = make(menuStore, 20)
+var tableDataStore = make(tableStore, 20)
 
 // CreateMenu Creates and Initialises a new Menu fo you to Customize.
 func CreateMenu(menuText [][]string, styleChar string, lineThickness int, whiteSpace int, separatorLines bool, takeInput bool) *Menu {
 	var menu Menu
 	var pMenu = &menu
+
 	pMenu.height = 0
 	pMenu.width = 0
 	pMenu.stringArray = nil
@@ -28,12 +30,33 @@ func CreateMenu(menuText [][]string, styleChar string, lineThickness int, whiteS
 	return pMenu
 }
 
-// StoreMenu stores you menu object into a custom map, indexed by a string identifier
+// CreateTable Creates and Initialises a new Table fo you to Customize.
+func CreateTable(tableText [][]string, styleChar string, lineThickness int) *Table {
+	var table Table
+	var pTable = &table
+
+	pTable.height = 0
+	pTable.width = 0
+	pTable.lineThickness = lineThickness
+	pTable.tableText = tableText
+	pTable.styleChar = styleChar
+	pTable.tableArray = nil
+	pTable.stringArray = nil
+
+	return pTable
+}
+
+// StoreTable stores your Table object into a custom map, indexed by a string identifier for quick retrieval.
+func (table *Table) StoreTable(identifier string) {
+	tableDataStore[identifier] = table
+}
+
+// StoreMenu stores your Menu object into a custom map, indexed by a string identifier for quick retrieval.
 func (menu *Menu) StoreMenu(identifier string) {
 	menuDataStore[identifier] = menu
 }
 
-// GetStoredMenu displays a Menu form the menuStore base on the identifier
+// GetStoredMenu returns a Menu form the menuStore based on the identifier
 func GetStoredMenu(identifier string) *Menu {
 	return menuDataStore[identifier]
 }
@@ -56,3 +79,4 @@ func (menu *Menu) DisplayMenu() {
 func (menu *Menu) GetInputData() string {
 	return menu.inputData
 }
+
