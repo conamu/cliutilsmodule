@@ -1,4 +1,4 @@
-# Cli-Utils-Module @v1.1.1
+# Cli-Utils-Module @v1.2.1
 
 ## Menustyling functionality
 
@@ -41,13 +41,10 @@ this will return a **string** for you to use.
 1. modifiy a portion of the menutext to simplify templating
 2. Animated decoration characters
 3. Template menus
-4. Option to create Tables instead of menus
+4. Option to create Tables instead of menus - ####WIP
 5. Option to nest Menus for different styles.
 6. Option to have a sliding text if text is too big
 7. option to have a max menu size.
-
-### Known Issues:
-1. Module throws an index out of Range error when Seperator lines are set to false.
 
 ## Utility Functions:
 
